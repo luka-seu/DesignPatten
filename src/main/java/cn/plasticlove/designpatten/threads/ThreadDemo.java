@@ -1,5 +1,6 @@
 package cn.plasticlove.designpatten.threads;
 
+import cn.plasticlove.designpatten.singleton.HungrySingleton;
 import cn.plasticlove.designpatten.singleton.LazyDoubleCheckSingleton;
 
 
@@ -11,7 +12,7 @@ import cn.plasticlove.designpatten.singleton.LazyDoubleCheckSingleton;
 public class ThreadDemo implements Runnable {
     @Override
     public void run() {
-        LazyDoubleCheckSingleton lazySinglton = LazyDoubleCheckSingleton.getInstance();
-        System.out.println(Thread.currentThread().getName()+"-----"+lazySinglton);
+        HungrySingleton hungrySingleton = HungrySingleton.getInstance();
+        System.out.println(Thread.currentThread().getName()+"-----"+hungrySingleton);
     }
 }
